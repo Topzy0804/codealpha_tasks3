@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Light Studies</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <meta name="claude:viewport-fit-sides" content="cover" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="head">
+        <div>
+          <div class="meta">
+            Plates 01 to 16 &middot; 800 &times; 600 vector
+          </div>
+          <h1>Light Studies</h1>
+        </div>
+        <p>
+          Sixteen small studies of colour and horizon, grouped by subject. Pick
+          a category, then open any plate to page through it.
+        </p>
+      </header>
+
+      <div class="bar">
+        <div
+          class="chips"
+          id="chips"
+          role="group"
+          aria-label="Filter by category"
+        ></div>
+        <div class="status" id="status" aria-live="polite"></div>
+      </div>
+
+      <main class="grid" id="grid"></main>
+
+      <footer class="foot">
+        <p style="margin: 0">
+          Every plate is drawn in code from a palette and a seed, so each one is
+          a few kilobytes.
+        </p>
+        <span>&larr; &rarr; to browse &middot; Esc to close</span>
+      </footer>
+    </div>
+
+    <div
+      class="lb"
+      id="lb"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image viewer"
+      inert
+    >
+      <div class="lb-top">
+        <span id="lbCount"></span>
+        <button class="lb-close" id="lbClose" type="button">
+          Close
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+      </div>
+      <button
+        class="lb-nav prev"
+        id="lbPrev"
+        type="button"
+        aria-label="Previous plate"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M15 5l-7 7 7 7" />
+        </svg>
+      </button>
+      <figure class="lb-stage" id="lbStage">
+        <img id="lbImg" alt="" />
+        <figcaption class="lb-cap">
+          <h2 id="lbTitle"></h2>
+          <span class="sub" id="lbSub"></span>
+          <span class="sw" id="lbSw" aria-hidden="true"></span>
+        </figcaption>
+      </figure>
+      <button
+        class="lb-nav next"
+        id="lbNext"
+        type="button"
+        aria-label="Next plate"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  </body>
+</html>
